@@ -79,7 +79,7 @@ npm run dev:resources
 npm run dev
 ```
 
-现在服务应该会正常运行，所以，**API** 会运行在 **http://localhost:5000**，然后**客户端**会运行在 **http://localhost:4000**。
+现在服务应该会正常运行，所以，**API** 会运行在 **http://localhost:5000** ，然后 **客户端** 会运行在 **http://localhost:4000**。
 
 ## 👏 贡献
 
