@@ -55,7 +55,48 @@
 - React DnD
 - MsgPackParser
 
-## 🚀 快速搭建
+## 🚀 运行
+
+### 运行 API
+
+```yaml
+services:
+  redis:
+    image: redis
+    command: --save 60 1 --loglevel warning
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      start_period: 20s
+      interval: 30s
+      retries: 5
+      timeout: 3s
+    volumes:
+      - ./data/redis:/data
+
+  unapy:
+    image: ghcr.io/summonhim/uno-game-chs:v1.0.0.rc1
+    restart: unless-stopped
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - STATIC_FILES_BASE_URL=https://unapy.n100.serenity.summonhim.top:8443/assets
+    # ports:
+    #   - 25000:80
+    depends_on:
+      redis:
+        condition: service_healthy
+```
+
+### 搭建客户端
+
+1. 克隆本仓库
+2. 切换 nodejs 版本为 12.x
+3. 运行该命令来安装项目依赖：`npm run setup`
+4. 新建/编辑 [packages/unoenty/.env](packages/unoenty/.env)，可参照 [packages/unoenty/.env.example](packages/unoenty/.env.example) 将 `REACT_APP_API_URL` 设置为你的 API 地址。
+5. 运行 `npm run build:unoenty` 来编译项目，编译完成后将 [packages/unoenty/build](packages/unoenty/build) 复制到你的网页服务器即可。
+
+## 🛠️ 测试
 
 1. 克隆本仓库
 2. 执行以下代码
@@ -79,7 +120,7 @@ npm run dev:resources
 npm run dev
 ```
 
-现在服务应该会正常运行，所以，**API** 会运行在 **http://localhost:5000** ，然后 **客户端** 会运行在 **http://localhost:4000**。
+现在服务应该会正常运行，所以，**API** 会运行在 **http://localhost:5000** ，然后 **客户端** 会运行在 **http://localhost:4000** 。
 
 ## 👏 贡献
 
@@ -124,6 +165,6 @@ npm run dev
   </tr>
 </table>
 
-## 译者/Translator
+## 📖 译者/Translator
 
 [SummonHIM](https://github.com/SummonHIM)
