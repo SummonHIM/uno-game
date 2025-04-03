@@ -1,19 +1,15 @@
-name: Unapy CI
+name: Release
 
 on:
   push:
-    branches: [ "master" ]
-    paths:
-      - 'packages/unapy/**'
-  pull_request:
-    branches: [ "master" ]
+    tags: [ 'v*.*.*' ]
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build:
+  unapy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -75,3 +71,43 @@ jobs:
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
+  
+  unoenty:
+    runs-on: ubuntu-latest
+  
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup NodeJS
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    
+    - name: Install All Dependencies
+      run: npm install
+
+    - name: Install Unoenty Dependencies
+      run: npm run install:unoenty
+
+    - name: Link All Dependencies
+      run: npm run bootstrap
+
+    - name: Build Client
+      run: npm run build:unoenty
+    
+    - name: Compress built files
+      run: |
+        cd packages/unoenty
+        tar -cJvf build.tar.xz build
+
+    - name: Publish new release
+      uses: softprops/action-gh-release@v2
+      with:
+          name: Release ${{ github.ref_name }}
+          files: packages/unoenty/build.tar.xz
+          body: |
+              Pull this release:
+              ```
+              docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.ref_name }}
+              ```

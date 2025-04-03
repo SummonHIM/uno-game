@@ -32,6 +32,12 @@ jobs:
     - name: Build Client
       run: npm run build:unoenty
 
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+          name: build
+          path: packages/unoenty/build
+
     # - name: Publish on Netlify
     #   uses: nwtgck/actions-netlify@v1.1
     #   with:
