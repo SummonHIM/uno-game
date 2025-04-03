@@ -75,12 +75,12 @@ services:
       - ./data/redis:/data
 
   unapy:
-    image: ghcr.io/summonhim/uno-game-chs:v1.0.0.rc1
+    image: ghcr.io/summonhim/uno-game-chs
     restart: unless-stopped
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-      - STATIC_FILES_BASE_URL=https://unapy.n100.serenity.summonhim.top:8443/assets
+      - STATIC_FILES_BASE_URL=http://unapy.hosts/assets
     # ports:
     #   - 25000:80
     depends_on:
