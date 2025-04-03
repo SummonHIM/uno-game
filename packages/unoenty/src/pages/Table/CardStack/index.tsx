@@ -108,7 +108,7 @@ const CardStack: React.FC<CardStackProps> = (props) => {
 
 						<img
 							src={currentComboTextImg}
-							alt="Current combo"
+							alt="当前累积"
 							className={classes.cardComboTitle}
 						/>
 					</Grid>
@@ -125,7 +125,7 @@ const CardStack: React.FC<CardStackProps> = (props) => {
 							onClick={buyCard}
 							className={classes.buyCardButton}
 						>
-							BUY CARD
+							抽牌
 						</Button>
 					</Grid>
 				)}

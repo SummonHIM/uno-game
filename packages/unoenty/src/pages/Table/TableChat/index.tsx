@@ -162,7 +162,7 @@ const Chat: React.FC = () => {
 					<Typography
 						variant="h6"
 					>
-						Chat
+						聊天
 					</Typography>
 				</Grid>
 
@@ -193,7 +193,7 @@ const Chat: React.FC = () => {
 					<TextField
 						value={content}
 						onChange={({ target }) => handleChangeContent(target.value)}
-						placeholder="Type something..."
+						placeholder="写点什么…"
 						variant="outlined"
 						className={classes.messageInput}
 						size="small"

@@ -21,7 +21,7 @@ const NotificationBar: React.FC = () => {
 		setOpened(true)
 	})
 
-	const message = "Your disconnected. Reconnecting..."
+	const message = "您已断开连接，正在重新连接……"
 
 	if (Device.isMobile) {
 		return (

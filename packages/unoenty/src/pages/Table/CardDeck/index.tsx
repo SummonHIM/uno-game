@@ -261,11 +261,9 @@ const CardDeck: React.FC<CardDeckProps> = (props) => {
 								variant="body1"
 								className={classes.afkInfo}
 							>
-								We noticed you are afk, so we are making random plays
+								我们已注意到您已离开，所以我们将为您开启自动出牌。
 								{" "}
-								automatically for you. In case you want to keep playing by
-								{" "}
-								yourself, click on the button below.
+								如果您已准备好继续游玩了，请点击下方的按钮。
 							</Typography>
 
 							<Divider orientation="horizontal" size={2} />
@@ -275,7 +273,7 @@ const CardDeck: React.FC<CardDeckProps> = (props) => {
 								className={classes.afkButton}
 								onClick={toggleOnlineStatus}
 							>
-								I'M HERE
+								我回来了
 							</Button>
 						</Grid>
 					</Grid>
@@ -340,7 +338,7 @@ const CardDeck: React.FC<CardDeckProps> = (props) => {
 								variant="h2"
 								className={classes.description}
 							>
-								(You)
+								（您）
 							</Typography>
 						)}
 					</Grid>

@@ -3,40 +3,44 @@
 </p>	
 
 <h3 align="center">
-  An UNO Game made in Javascript 🎴
+  使用 Javascript 编写的 UNO Game 🎴
 </h3>
 
 <p align="center">
+（中文版|Chinese version）
+</p>
+
+<p align="center">
 	<a href="https://lerna.js.org/">
-		<img alt="lerna" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="maintained with lerna"/>
+		<img alt="lerna" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="通过 lerna 维护"/>
 	</a>
 	<a href="https://github.com/microsoft/TypeScript">
-		<img alt="typescript" src="https://camo.githubusercontent.com/41c68e9f29c6caccc084e5a147e0abd5f392d9bc/68747470733a2f2f62616467656e2e6e65742f62616467652f547970655363726970742f7374726963742532302546302539462539322541412f626c7565">
+		<img alt="typescript" src="https://img.shields.io/badge/typescript-3178c6?logo=typescript&logoColor=fff">
 	</a>
-	<a href="https://github.com/guilhermebkel/uno-game">
-		<img alt="mit license" src="https://img.shields.io/github/license/guilhermebkel/uno-game?color=0051ff" />
+	<a href="https://github.com/summonhim/uno-game">
+		<img alt="mit license" src="https://img.shields.io/github/license/summonhim/uno-game?color=0051ff" />
 	</a>
 </p>
 <p align="center">
-	<a href="https://github.com/guilhermebkel/uno-game">
-		<img alt="unoenty build" src="https://github.com/guilhermebkel/uno-game/workflows/Unoenty%20CI/badge.svg" />
+	<a href="https://github.com/summonhim/uno-game">
+		<img alt="unoenty build" src="https://github.com/summonhim/uno-game/workflows/Unoenty%20CI/badge.svg" />
 	</a>
-	<a href="https://github.com/guilhermebkel/uno-game">
-		<img alt="unapy build" src="https://github.com/guilhermebkel/uno-game/workflows/Unapy%20CI/badge.svg" />
+	<a href="https://github.com/summonhim/uno-game">
+		<img alt="unapy build" src="https://github.com/summonhim/uno-game/workflows/Unapy%20CI/badge.svg" />
 	</a>
 </p>
 
 <p align="center">
 	<img src="./assets/main_preview.gif" alt="mockup" />
 	<br></br>
-	<a href="https://uno.guilherr.me">Click here to play this game</a>
+	<!-- <a href="https://uno.guilherr.me">Click here to play this game</a> -->
 </p>
 
-## 📌 Overview
+## 📌 概览
 
-A simple UNO Game made in Javascript, supposed to be blazing easier and faster than Gartic to start playing. 
+使用 Javascript 编写的简易 UNO Game。应该能比 Gartic 更容易，更快速的开始游戏。
 
-## 🔧 Technologies
+## 🔧 技术
 
 - Typescript
 - React.js
@@ -51,44 +55,45 @@ A simple UNO Game made in Javascript, supposed to be blazing easier and faster t
 - React DnD
 - MsgPackParser
 
-## 🚀 Getting started
+## 🚀 快速搭建
 
-1. Clone this repository
-2. Run the following command
+1. 克隆本仓库
+2. 执行以下代码
 ```sh
-# Install all shared dependencies
-# Install dependencies for api
-# Install dependencies for client
-# Link all packages dependencies together
-# Add env file for api
-# Add env file for client
+# 安装所有共享依赖
+# 为 API 安装依赖
+# 为客户端安装依赖
+# 为所有包关联依赖
+# 为 API 添加环境文件
+# 为客户端添加环境文件
 npm run setup
 ```
 
-3. Run the command below inside the root folder to startup all the needed resources (such as Redis).
+3. 在项目根目录中运行该命令来运行所有的必要资源（类如 Redis）。
 ```sh
 npm run dev:resources
 ```
 
-3. Run the command bellow inside **packages/unoenty** and **packages/unapy** to start api and client.
+3. 在 **packages/unoenty** 和 **packages/unapy** 目录下分别运行以下命令来开启 API 和客户端。
 ```sh
 npm run dev
 ```
 
-Right here everything should be working fine. So, **api** will be available at **http://localhost:5000** and **client** will be available at **http://localhost:4000**.
+现在服务应该会正常运行，所以，**API** 会运行在 **http://localhost:5000**，然后**客户端**会运行在 **http://localhost:4000**。
 
-## 👏 Contributing
+## 👏 贡献
 
-1. Clone this repository to your machine.
-2. Create a new branch locally following the **Git Karma** pattern. Ex: feat/my-awesome-feature.
-3. Then, after coding your contribution, make a merge request for your branch.
+1. 克隆本仓库到你的电脑。
+2. 在本地创建一个新分支，格式需为 **Git Karma** 格式。类如：feat/xin-gong-neng。
+3. 编写完需要贡献的代码后。为该分支发起新合并请求。
 
-## 🗺️ Roadmap
-Since we want to keep improving this game, you are able to see what we plan to do next on our [**Roadmap**](https://github.com/guilhermebkel/uno-game/projects/1). Any idea or suggestion of improvement and bug solving is welcome!
+## 🗺️ 路线图
 
-## 💫 Contributors
+由于我们希望不断改进这款游戏，可在我们的[**路线图**](https://github.com/guilhermebkel/uno-game/projects/1)上查看下一步计划。欢迎提出任何改进建议或错误修复意见！
 
-Thanks to all the people who contributed on this project!
+## 💫 贡献者
+
+感谢以下人士为此项目做出的贡献！
 
 <table>
   <tr>
@@ -118,3 +123,7 @@ Thanks to all the people who contributed on this project!
 		</td>
   </tr>
 </table>
+
+## 译者/Translator
+
+[SummonHIM](https://github.com/SummonHIM)

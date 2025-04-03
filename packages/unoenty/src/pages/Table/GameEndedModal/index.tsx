@@ -132,7 +132,7 @@ const GameEndedModal: GameEndedModalType & React.FC<GameEndedModalProps> = (prop
 										variant="h2"
 										className={classes.description}
 									>
-										(You)
+										（您）
 									</Typography>
 								)}
 							</Grid>
@@ -140,7 +140,7 @@ const GameEndedModal: GameEndedModalType & React.FC<GameEndedModalProps> = (prop
 
 						<img
 							src={wonTextImg}
-							alt="Won!"
+							alt="赢了！"
 							className={classes.wonImage}
 						/>
 					</Grid>
@@ -153,7 +153,7 @@ const GameEndedModal: GameEndedModalType & React.FC<GameEndedModalProps> = (prop
 						disabled={loadingPlayAgain}
 						className={classes.playAgainButton}
 					>
-						{loadingPlayAgain ? "WAITING..." : "PLAY AGAIN"}
+						{loadingPlayAgain ? "等待中…" : "再来一把"}
 					</Button>
 
 					<Divider orientation="horizontal" size={1} />
@@ -163,7 +163,7 @@ const GameEndedModal: GameEndedModalType & React.FC<GameEndedModalProps> = (prop
 						onClick={handleQuit}
 						className={classes.quitButton}
 					>
-						QUIT
+						退出
 					</Button>
 				</Grid>
 			</Dialog>

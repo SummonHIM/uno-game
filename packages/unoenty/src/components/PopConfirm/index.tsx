@@ -64,7 +64,7 @@ const PopConfirm: PopConfirmType & React.FC<PopConfirmProps> = (props) => {
 						color="primary"
 						type="submit"
 					>
-						Cancel
+						取消
 					</Button>
 
 					<Button
@@ -73,7 +73,7 @@ const PopConfirm: PopConfirmType & React.FC<PopConfirmProps> = (props) => {
 						color="primary"
 						type="submit"
 					>
-						Confirm
+						确认
 					</Button>
 				</DialogActions>
 			</Dialog>

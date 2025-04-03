@@ -56,8 +56,8 @@ const Menu: React.FC = () => {
 
 	const handleLogout = () => {
 		PopConfirm.open({
-			title: "Logout",
-			message: "Are you sure you want to logout?",
+			title: "登出",
+			message: "您确定真的要登出吗？",
 			onConfirm: () => {
 				Auth.logout()
 			},
@@ -161,7 +161,7 @@ const Menu: React.FC = () => {
 							variant="h2"
 							className={classes.menuTitle}
 						>
-							PAGES
+							页面
 						</Typography>
 
 						<Divider orientation="horizontal" size={1} />
@@ -175,7 +175,7 @@ const Menu: React.FC = () => {
 									/>
 								</ListItemIcon>
 								<ListItemText
-									primary="Games"
+									primary="所有游戏"
 									primaryTypographyProps={{
 										variant: "h3",
 										className: classes.listItemText,
@@ -190,7 +190,7 @@ const Menu: React.FC = () => {
 							variant="h2"
 							className={classes.menuTitle}
 						>
-							LAST GAMES
+							历史游玩
 						</Typography>
 
 						<Divider orientation="horizontal" size={1} />
@@ -226,7 +226,7 @@ const Menu: React.FC = () => {
 							className={classes.logoutButton}
 							onClick={handleLogout}
 						>
-							LOGOUT
+							登出
 						</Button>
 
 						<Divider orientation="horizontal" size={1} />
@@ -238,7 +238,7 @@ const Menu: React.FC = () => {
 							startIcon={<GithubIcon />}
 							className={classes.githubButton}
 						>
-							Give us a star on Github
+							在 Github 上给我们点星星
 						</Button>
 					</Grid>
 				</Grid>

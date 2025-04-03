@@ -5,12 +5,18 @@ import { Grid, Typography, Button } from "@material-ui/core"
 import useStyles from "@/components/Menu/GameItem/styles"
 import useCustomStyles from "@/styles/custom"
 
-import { statusColorMap } from "@/utils/game"
+import { StatusMap, statusColorMap } from "@/utils/game"
 
 type GameItemProps = {
 	playersCount: number
 	name: string
 	status: GameStatus
+}
+
+const statusTextMap: StatusMap<string> = {
+	playing: "正在游玩",
+	ended: "已经结束",
+	waiting: "正在等待",
 }
 
 const GameItem: React.FC<GameItemProps> = (props) => {
@@ -20,6 +26,7 @@ const GameItem: React.FC<GameItemProps> = (props) => {
 	const customClasses = useCustomStyles({ limitedNameWidth: 70 })
 
 	const color = statusColorMap[status]
+	const statusText = statusTextMap[status]
 
 	return (
 		<Grid
@@ -45,7 +52,7 @@ const GameItem: React.FC<GameItemProps> = (props) => {
 				</Typography>
 
 				<Typography variant="caption">
-					{playersCount} {playersCount === 1 ? "PLAYER" : "PLAYERS"}
+					{playersCount} 名玩家
 				</Typography>
 			</Grid>
 
@@ -56,7 +63,7 @@ const GameItem: React.FC<GameItemProps> = (props) => {
 				}}
 			>
 				<Typography variant="caption">
-					{status?.toUpperCase()}
+					{statusText}
 				</Typography>
 			</Grid>
 
@@ -67,7 +74,7 @@ const GameItem: React.FC<GameItemProps> = (props) => {
 						backgroundColor: color,
 					}}
 				>
-					JOIN
+					加入
 				</Button>
 			</Grid>
 		</Grid>

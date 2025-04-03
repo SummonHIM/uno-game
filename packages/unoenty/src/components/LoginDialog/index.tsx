@@ -73,7 +73,7 @@ const LoginDialog: LoginDialogType & React.FC<LoginDialogProps> = (props) => {
 					onSubmit={handleSubmit}
 					className={classes.form}
 				>
-					<DialogTitle>Login</DialogTitle>
+					<DialogTitle>登录</DialogTitle>
 
 					<img
 						src={logoImage}
@@ -83,13 +83,13 @@ const LoginDialog: LoginDialogType & React.FC<LoginDialogProps> = (props) => {
 
 					<DialogContent>
 						<DialogContentText color="textPrimary">
-							You have to choose a name in order to play this game.
+							请输入用户名来开始游戏。
 						</DialogContentText>
 						<TextField
 							autoFocus
 							required
 							margin="dense"
-							label="Name"
+							label="用户名"
 							value={response.name}
 							onChange={({ target }) => handleChange("name", target.value)}
 							fullWidth
@@ -102,7 +102,7 @@ const LoginDialog: LoginDialogType & React.FC<LoginDialogProps> = (props) => {
 							color="primary"
 							type="submit"
 						>
-							Confirm
+							确认
 						</Button>
 					</DialogActions>
 				</form>
